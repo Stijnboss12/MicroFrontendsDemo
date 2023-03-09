@@ -37,6 +37,23 @@ jobs:
         push: true
         tags: stijnboss12/mfdemo.shell:latest
         labels: ${{ steps.meta.outputs.labels }}
+        
+  deploy-shell:
+    runs-on: ubuntu-latest
+    needs: build-shell
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'mfdemoshell'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_4dfa9e31acdd418d80f775ecdc395de9 }}
+          images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7c9732dd819344f689705f29a35d8eaa }}/mfdemo.shell:latest'
 
   build-hotel-booking:
     name: Build hotel-booking application Docker image
@@ -70,6 +87,21 @@ jobs:
         push: true
         tags: stijnboss12/mfdemo.hotel-booking:latest
         labels: ${{ steps.meta.outputs.labels }}
+        
+  deploy-hotel-booking:
+    runs-on: ubuntu-latest
+    needs: build-hotel-booking
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'mfdemohotelbooking'
+          images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7c9732dd819344f689705f29a35d8eaa }}/mfdemo.hotel-booking:latest'
 
   build-flight-booking:
     name: Build flight-booking application Docker image
