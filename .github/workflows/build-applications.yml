@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-publish-shell:
-    name: Build and Publish Shell Application
+    name: Build Shell Application
 
     runs-on: ubuntu-latest
 
@@ -36,7 +36,7 @@ jobs:
       run: npm run build --if-present
 
   build-publish-hotel-booking:
-    name: Build and Publish Hotel-Booking Application
+    name: Build Hotel-Booking Application
 
     runs-on: ubuntu-latest
 
@@ -63,7 +63,7 @@ jobs:
       run: npm run build --if-present
 
   build-publish-flight-booking:
-    name: Build and Publish Flight-Booking Application
+    name: Build Flight-Booking Application
 
     runs-on: ubuntu-latest
 
