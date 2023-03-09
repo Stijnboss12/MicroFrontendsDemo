@@ -1,9 +1,7 @@
-name: Build and Publish docker iamges for Applications
+name: Build and Publish docker images for Applications
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
