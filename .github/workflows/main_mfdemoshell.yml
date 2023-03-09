@@ -6,7 +6,7 @@ name: Build and deploy Shell application docker image to hub and azure app
 on:
   push:
     branches:
-      - release
+      - main
   workflow_dispatch:
 
 jobs:
