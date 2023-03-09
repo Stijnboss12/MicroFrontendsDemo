@@ -47,4 +47,4 @@ jobs:
       with:
         app-name: 'mfdemohotelbooking'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_15a502a75c7a4f04bf5f749774e0ff86 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:${{ github.sha }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:${{ github.sha }}'
