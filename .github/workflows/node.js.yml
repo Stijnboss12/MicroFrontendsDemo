@@ -13,6 +13,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: '../../shell'
+
     strategy:
       matrix:
         node-version: [18.x]
@@ -26,9 +30,8 @@ jobs:
         working-directory: ./shell
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: '../../shell/package-lock.json'
     - name: Build shell application npm install
-      working-directory: ./shell
       run: npm ci npm
     - name: Build shell application Build
-      working-directory: ./shell
       run: npm run build --if-present
