@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App - mfdemohotelbooking
+name: Build and deploy Hotel-Booking application docker image to hub and azure app
 
 on:
   push:
@@ -29,9 +29,9 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
+        context: 'hotel-booking'
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:${{ github.sha }}
-        file: ./Dockerfile
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
         app-name: 'mfdemohotelbooking'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_15a502a75c7a4f04bf5f749774e0ff86 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:latest'
