@@ -8,8 +8,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-shell:
-    name: Build Shell Application
+  build-publish-shell:
+    name: Build and Publish Shell Application
 
     runs-on: ubuntu-latest
 
@@ -35,8 +35,8 @@ jobs:
     - name: Build shell application Build
       run: npm run build --if-present
 
-  build-hotel-booking:
-    name: Build Hotel-Booking Application
+  build-publish-hotel-booking:
+    name: Build and Publish Hotel-Booking Application
 
     runs-on: ubuntu-latest
 
@@ -62,8 +62,8 @@ jobs:
     - name: Build hotel-booking application Build
       run: npm run build --if-present
 
-  build-flight-booking:
-    name: Build Flight-Booking Application
+  build-publish-flight-booking:
+    name: Build and Publish Flight-Booking Application
 
     runs-on: ubuntu-latest
 
