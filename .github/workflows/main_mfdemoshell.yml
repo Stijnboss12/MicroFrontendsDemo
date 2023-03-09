@@ -6,7 +6,7 @@ name: Build and deploy Shell application docker image to hub and azure app
 on:
   push:
     branches:
-      - main
+      - release
   workflow_dispatch:
 
 jobs:
@@ -46,6 +46,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'mfdemoshell'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_16f6e8413ab344d0b6d34dd92a9eb9c8 }}
         images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_8d65de9a984f46dc93d073411fff9522 }}/mfdemo.shell:latest'
