@@ -30,7 +30,7 @@ jobs:
         working-directory: ./shell
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: '../../shell/package-lock.json'
+        cache-dependency-path: '**/shell/package-lock.json'
     - name: Build shell application npm install
       run: npm ci npm
     - name: Build shell application Build
