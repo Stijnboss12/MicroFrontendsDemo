@@ -51,6 +51,8 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'mfdemoshell'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_4dfa9e31acdd418d80f775ecdc395de9 }}
           images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7c9732dd819344f689705f29a35d8eaa }}/mfdemo.shell:latest'
 
   build-hotel-booking:
