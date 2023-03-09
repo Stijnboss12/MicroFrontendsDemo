@@ -31,7 +31,7 @@ jobs:
       with:
         context: 'flight-booking'
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_87a958e8b6814e43ab700f7a5e4fb044 }}/mfdemo.flight-booking:latest
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_87a958e8b6814e43ab700f7a5e4fb044 }}/mfdemo.flight-booking:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,4 +47,4 @@ jobs:
       with:
         app-name: 'mfdemoflightbooking'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_5fe53ea1e8c24a589bad77a6b53ecaa9 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_87a958e8b6814e43ab700f7a5e4fb044 }}/mfdemo.flight-booking:latest'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_87a958e8b6814e43ab700f7a5e4fb044 }}/mfdemo.flight-booking:${{ github.sha }}'
