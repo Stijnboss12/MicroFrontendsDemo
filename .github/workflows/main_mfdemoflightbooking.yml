@@ -6,7 +6,7 @@ name: Build and deploy Flight-Booking application docker image to hub and azure 
 on:
   push:
     branches:
-      - main
+      - release
   workflow_dispatch:
 
 jobs:
@@ -46,6 +46,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'mfdemoflightbooking'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_5fe53ea1e8c24a589bad77a6b53ecaa9 }}
         images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_87a958e8b6814e43ab700f7a5e4fb044 }}/mfdemo.flight-booking:latest'
