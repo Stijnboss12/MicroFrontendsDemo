@@ -1,0 +1,90 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Build Applications
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-shell:
+    name: Build Shell Application
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: 'shell'
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/shell/package-lock.json'
+    - name: Build shell application npm install
+      run: npm ci npm
+    - name: Build shell application Build
+      run: npm run build --if-present
+
+  build-hotel-booking:
+    name: Build Hotel-Booking Application
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: 'hotel-booking'
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/hotel-booking/package-lock.json'
+    - name: Build hotel-booking application npm install
+      run: npm ci npm
+    - name: Build hotel-booking application Build
+      run: npm run build --if-present
+
+  build-flight-booking:
+    name: Build Flight-Booking Application
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: 'flight-booking'
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/flight-booking/package-lock.json'
+    - name: Build flight-booking application npm install
+      run: npm ci npm
+    - name: Build flight-booking application Build
+      run: npm run build --if-present
