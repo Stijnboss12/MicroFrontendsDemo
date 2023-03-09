@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  shell:
+    image: stijnboss12/mfdemo.shell:latest
+    ports:
+      - "80:80"
+
+  hotel-booking:
+    image: stijnboss12/mfdemo.hotel-booking:latest
+    ports:
+      - 81:80
+
+  flight-booking:
+    image: stijnboss12/mfdemo.flight-booking:latest
+    ports:
+      - '82:80'

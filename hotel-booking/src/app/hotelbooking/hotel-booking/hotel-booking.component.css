@@ -1,0 +1,27 @@
+.hoteldiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.hoteldiv button {
+    background-color: darkblue;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    width: 50%;
+    height: 60px;
+    font-size: xx-large;
+    border-color: red;
+    border-width: 5px;
+}
+
+.hoteldiv a {
+    color: white;
+    margin-bottom: 5px;
+}

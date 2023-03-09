@@ -1,0 +1,27 @@
+.flightdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: red;
+    color: white;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.flightdiv button {
+    background-color: darkred;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    width: 50%;
+    height: 60px;
+    font-size: xx-large;
+    border-color: blue;
+    border-width: 5px;
+}
+
+.flightdiv a {
+    color: white;
+    margin-bottom: 5px;
+}

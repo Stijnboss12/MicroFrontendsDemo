@@ -1,0 +1,20 @@
+<div class="hoteldiv">
+  <h1>This is the hotel booking search component</h1>
+  <h2>You can search for hotels below</h2>
+  <div class="formdiv">
+    <div>
+      <label for="countryinput">Country:</label>
+      <input id="countryinput" [(ngModel)]="searchModel.country" placeholder="Country" maxlength="50"/>
+    </div>
+    <div>
+      <label for="cityinput">City:</label>
+      <input id="cityinput" [(ngModel)]="searchModel.city" placeholder="City" maxlength="50"/>
+    </div>
+  </div>
+  <button (click)="Search()">Search</button>
+</div>
+
+<div>
+    <h2>You are going to search for hotels in: {{searchModel.country}}</h2>
+    <h2>And in the city of: {{searchModel.city}}</h2>
+</div>

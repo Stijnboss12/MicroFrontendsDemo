@@ -1,0 +1,33 @@
+.home {
+    text-align: center;
+    font-size: x-large;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hb {
+    background-color: blue;
+    color: white;
+    font-size: x-large;
+    border-radius: 10px;
+    border-color: red;
+    border-width: 5px;
+    width: 30%;
+    height: 50px;
+    font-weight: bold;
+}
+
+.fb {
+    background-color: red;
+    color: white;
+    font-size: x-large;
+    border-radius: 10px;
+    border-color: blue;
+    border-width: 5px;
+    width: 30%;
+    height: 50px;
+    font-weight: bold;
+}

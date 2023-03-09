@@ -1,0 +1,31 @@
+<div class="flightdiv">
+  <h1>This is the flight booking search component</h1>
+  <h2>You can search for flights below</h2>
+  <div class="formdiv">
+    <div>
+      <label for="countryinput">Country:</label>
+      <input
+        id="countryinput"
+        [(ngModel)]="searchModel.from"
+        placeholder="From"
+        maxlength="50"
+      />
+    </div>
+    <div>
+      <label for="cityinput">City:</label>
+      <input
+        id="cityinput"
+        [(ngModel)]="searchModel.to"
+        placeholder="To"
+        maxlength="50"
+      />
+    </div>
+  </div>
+  <button (click)="Search()">Search</button>
+</div>
+<div>
+  <h2>
+    You are going to search for flights from: {{ searchModel.from }} to
+    {{ searchModel.to }}
+  </h2>
+</div>
