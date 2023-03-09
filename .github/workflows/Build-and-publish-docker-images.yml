@@ -1,4 +1,4 @@
-name: Build and Publish docker images for Applications
+name: Publish docker images for Applications
 
 on:
   push:
