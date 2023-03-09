@@ -21,9 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      working-directory: ./shell
       uses: actions/setup-node@v3
       with:
+        working-directory: ./shell
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Build shell application npm install
