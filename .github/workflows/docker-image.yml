@@ -1,0 +1,55 @@
+name: Build docker images for Applications
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-shell:
+    name: Build shell application Docker image
+
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: 'shell'
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mfdemo.shell:latest
+
+  build-hotel-booking:
+    name: Build hotel-booking application Docker image
+
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: 'hotel-booking'
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mfdemo.hotel-booking:latest
+
+  build-flight-booking:
+    name: Build flight-booking application Docker image
+
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: 'flight-booking'
+
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mfdemo.flight-booking:latest
