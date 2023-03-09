@@ -5,7 +5,7 @@ name: Build Applications
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
 jobs:
   build-publish-shell:
