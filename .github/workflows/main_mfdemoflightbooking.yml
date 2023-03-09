@@ -6,7 +6,7 @@ name: Build and deploy Flight-Booking application docker image to hub and azure 
 on:
   push:
     branches:
-      - release
+      - main
   workflow_dispatch:
 
 jobs:
