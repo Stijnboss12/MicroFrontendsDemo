@@ -6,7 +6,7 @@ name: Build and deploy Hotel-Booking application docker image to hub and azure a
 on:
   push:
     branches:
-      - main
+      - release
   workflow_dispatch:
 
 jobs:
@@ -46,6 +46,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'mfdemohotelbooking'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_15a502a75c7a4f04bf5f749774e0ff86 }}
         images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c3b22b319d854a3e8503760959e79df0 }}/mfdemo.hotel-booking:latest'
