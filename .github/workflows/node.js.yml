@@ -35,7 +35,6 @@ jobs:
     - name: Build shell application Build
       run: npm run build --if-present
 
-jobs:
   build:
     name: Build Hotel-Booking Application
 
@@ -63,7 +62,6 @@ jobs:
     - name: Build shell application Build
       run: npm run build --if-present
 
-jobs:
   build:
     name: Build Flight-Booking Application
 
