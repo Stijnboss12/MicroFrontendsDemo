@@ -22,9 +22,9 @@ You can see this in the MicroFrontendsDemo/shell/src/app/app-routing.module.ts f
 ## The search component in the imported Flight-Booking module
 ![image](https://user-images.githubusercontent.com/58070673/224314666-7096406f-2d0d-4adc-9fa3-7a0bd04d379c.png)
 
-The booking modules are exported angular modules which you can see in the MicroFrontendsDemo/<Name of booking app>/webpack.config.js file and in the images above.
+The booking modules are exported angular modules which you can see in the MicroFrontendsDemo/"Name of booking app"/webpack.config.js file and in the images above.
 
-The exported modules and their dependencies and imported code can be found in MicroFrontendsDemo/<Name of booking app>/src/app/<hotel or flight>booking/<hotel or flight>booking.module.ts file.
+The exported modules and their dependencies and imported code can be found in MicroFrontendsDemo/"Name of booking app"/src/app/"hotel or flight"booking/"hotel or flight"booking.module.ts file.
 
 Once one of these routes is called the application will import the corresponding booking module with its own dependencies, routes, code, etc.
 Module Federation helps in sorting and applying the correct dependencies so there are no conflicts.
