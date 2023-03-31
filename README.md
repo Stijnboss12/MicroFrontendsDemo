@@ -26,7 +26,7 @@ The booking modules are exported angular modules which you can see in the MicroF
 
 The exported modules and their dependencies and imported code can be found in MicroFrontendsDemo/hotel-booking*/src/app/hotelbooking*/hotelbooking*.module.ts file.
 
-* For the FlightBooking module change "hotel" to "flight".
+"*" For the FlightBooking module change "hotel" to "flight".
 
 Once one of these routes is called the application will import the corresponding booking module with its own dependencies, routes, code, etc.
 Module Federation helps in sorting and applying the correct dependencies so there are no conflicts.
